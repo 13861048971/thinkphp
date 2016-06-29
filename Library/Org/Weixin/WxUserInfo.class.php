@@ -74,10 +74,10 @@ class WxUserInfo{
 			'&secret='. $this->appSerc .
 			'&code='. $code .
 			'&grant_type=authorization_code';
-		$data = file_get_contents($url);
-		$data = json_decode($data, true);
+		$str = file_get_contents($url);
+		$data = json_decode($str, true);
 		if(!$data['access_token'])
-			return $this->setError('getToken:'.$data['errmsg']);
+			return $this->setError('getToken:'.$data['errmsg'] . $str);
 		return $data;
 	}
 	
