@@ -42,6 +42,14 @@ class Weixin {
 		}
 	}
 	
+	public function getUserInfo($openid){
+		$url = 'https://api.weixin.qq.com/cgi-bin/user/info?'.
+			'access_token='. $this->token .'&openid='. $openid;
+		$user = file_get_contents($url);
+		$user = json_decode($user, 1);
+		return $user;
+	}
+	
 	/** 
 	 * 处理菜单
 	 * 
