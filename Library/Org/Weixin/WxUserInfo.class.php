@@ -75,6 +75,7 @@ class WxUserInfo{
 			'&code='. $code .
 			'&grant_type=authorization_code';
 		$str = file_get_contents($url);
+		Think\Log::write($url . $str ,'Err');
 		$data = json_decode($str, true);
 		if(!$data['access_token'])
 			return $this->setError('getToken:'.$data['errmsg'] . $str);
