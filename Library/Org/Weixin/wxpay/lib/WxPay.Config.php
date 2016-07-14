@@ -4,7 +4,7 @@
 */
 
 define('WX_APPID', c('weixin.APPID'));
-define('WX_APPID', c('weixin.MCHID'));
+define('WX_MCHID', c('weixin.MCHID'));
 define('WX_KEY',   c('weixin.APPSECRET'));
 define('WX_APPSECRET', c('weixin.APPSECRET'));
 
