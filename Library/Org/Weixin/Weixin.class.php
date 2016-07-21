@@ -47,6 +47,9 @@ class Weixin {
 			'access_token='. $this->token .'&openid='. $openid;
 		$user = file_get_contents($url);
 		$user = json_decode($user, 1);
+		if(!$user['openid'])
+			$this->resetToken();
+		
 		return $user;
 	}
 	
@@ -158,7 +161,7 @@ class Weixin {
 		if(s($this->tempFile))
 			return $this->token;
 		
-		if(time() > $expires_time - 30){
+		if(time() > $expires_time - 600){
 			s($this->tokenFile, null);
 			return false;
 		}
