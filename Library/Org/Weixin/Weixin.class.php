@@ -62,8 +62,10 @@ class Weixin {
 		// $url = 'http://127.0.0.1:83/test.php';
 		$data = static::post($url, $data);
 		$data = json_decode($data, true);
-		if($data['errmsg'] != 'ok')
-			return $this->setError($data['errmsg']);
+		if($data['errmsg'] != 'ok'){
+			$this->resetToken();
+			return $this->setError($data['errmsg'].$data['errcode']);
+		}
 		return true;
 	}
 	
@@ -162,7 +164,9 @@ class Weixin {
 		}
 		return $this->token;
 	}
-	
+	private function resetToken(){
+		s($this->tokenFile, null);
+	}
 	/**
 	 * 取令牌
 	 */
