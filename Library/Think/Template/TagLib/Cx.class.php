@@ -494,7 +494,7 @@ class Cx extends TagLib {
                 if(strpos ($val, '?')) {
                     list($val,$version) =   explode('?',$val);
                 } else {
-                    $version = '';
+                    $version = C('STATIC_VERSION');
                 }
                 switch($type) {
                 case 'js':
