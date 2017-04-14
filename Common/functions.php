@@ -1516,3 +1516,9 @@ function think_filter(&$value){
 function in_array_case($value,$array){
     return in_array(strtolower($value),array_map('strtolower',$array));
 }
+
+//调试打印方法
+function dd($var){
+	dump($var);
+	exit;
+}
