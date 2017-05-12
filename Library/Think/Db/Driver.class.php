@@ -562,7 +562,7 @@ abstract class Driver {
                         if(is_string($val[1])) {
                              $val[1] =  explode(',',$val[1]);
                         }
-						!$val[1] && $val = array(0);
+						!$val[1] && $val[1] = array('null');
                         $zone      =   implode(',',$this->parseValue($val[1]));
                         $whereStr .= $key.' '.$this->exp[$exp].' ('.$zone.')';
                     }
