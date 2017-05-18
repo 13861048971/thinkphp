@@ -27,7 +27,6 @@ class GetToken{
 	function toJsonStr($bucket, $imgName){
 		$arr['scope'] = $bucket.':'.$imgName;
 		$arr['deadline'] = time()+30;
-		$arr['returnBody'] = $this->returnBody;
 		return json_encode($arr);
 	}
 	
