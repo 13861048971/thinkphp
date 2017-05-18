@@ -47,7 +47,7 @@ class GetToken{
 	function getUploadToken($bucket, $imgName){
 		$jsonString = $this->toJsonStr($bucket, $imgName);
 		$encodedPutPolicy = $this->base64($jsonString);
-		$sign = hash_hmac($encodedPutPolicy);
+		$sign = hash_hmac('sha1', $encodedPutPolicy, $this->SK);
 		$encodedSign  = $this->base64($sign);
 		return $this->AK.':'.$encodedSign.':'.$encodedPutPolicy; 
 	}
