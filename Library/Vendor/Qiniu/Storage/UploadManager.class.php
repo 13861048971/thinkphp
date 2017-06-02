@@ -1,10 +1,12 @@
 <?php
 namespace Qiniu\Storage;
-
+include_once(QINIU_PATH . '/Http/HttpClient.class.php');
+include_once(QINIU_PATH . '/Http/Client.class.php');
+include_once(QINIU_PATH . '/Http/Error.class.php');
+include_once(QINIU_PATH . '/Storage/FormUploader.class.php');
+include_once(QINIU_PATH . '/Storage/ResumeUploader.class.php');
+use Qiniu\Http\Client;
 use Qiniu\Config;
-use Qiniu\Http\HttpClient;
-use Qiniu\Storage\ResumeUploader;
-use Qiniu\Storage\FormUploader;
 
 /**
  * 主要涉及了资源上传接口的实现

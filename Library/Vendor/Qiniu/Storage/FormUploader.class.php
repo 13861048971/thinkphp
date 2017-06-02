@@ -1,9 +1,6 @@
 <?php
 namespace Qiniu\Storage;
-
 use Qiniu\Http\Client;
-use Qiniu\Http\Error;
-
 final class FormUploader
 {
 

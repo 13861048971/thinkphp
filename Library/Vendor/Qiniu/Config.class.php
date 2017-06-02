@@ -3,6 +3,8 @@ namespace Qiniu;
 
 use Qiniu\Zone;
 
+define('QINIU_PATH', __dir__);
+
 final class Config
 {
     const SDK_VER = '7.1.3';

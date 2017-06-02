@@ -1,13 +1,12 @@
 <?php
 namespace Qiniu;
 
-$path = __DIR__;
-include($path.'/Zone.class.php');
-include($path.'/Config.class.php');
-include($path.'/Http/Client.class.php');
-include($path.'/Http/Request.class.php');
-include($path.'/Http/Response.class.php');
-include($path.'/functions.class.php');
+include_once(__DIR__ . '/Config.class.php');
+include_once(QINIU_PATH . '/Zone.class.php');
+include_once(QINIU_PATH . '/Http/Client.class.php');
+include_once(QINIU_PATH . '/Http/Request.class.php');
+include_once(QINIU_PATH . '/Http/Response.class.php');
+include_once(QINIU_PATH . '/functions.class.php');
 
 
 final class Auth
